@@ -1,0 +1,31 @@
+<h1>Songs</h1>
+
+<table>
+    <caption>All songs</caption>
+    <thead>
+        <tr>
+        <th>id</th>
+        <th>Title</th>
+        <th>released</th>
+        <th>release year</th>
+        <th>artist name</th>
+        <th>genre</th>
+        <th>created at</th>
+        <th>updated at</th>
+        </tr>
+    </thead>
+    <tbody>
+        <%Song.all.each_with_index do |song, i|%>
+            <tr>
+            <th scope="row"><%=i%></th>
+            <td><%=link_to song.title, song_path(song)%></td>
+            <td><%=song.released%></td>
+            <td><%=song.release_year%></td>
+            <td><%=song.artist_name%></td>
+            <td><%=song.genre%></td>
+            <td><%=song.created_at%></td>
+            <td><%=song.updated_at%></td>
+            </tr>
+        <%end%>
+    </tbody>
+</table>
